@@ -1,0 +1,71 @@
+CREATE TABLE [dbo].[Documenti_Tipi]
+(
+[ID] [nvarchar] (20) COLLATE Latin1_General_CI_AS NOT NULL,
+[IDModulo] [nvarchar] (20) COLLATE Latin1_General_CI_AS NOT NULL,
+[IDCausaleDefault] [nvarchar] (3) COLLATE Latin1_General_CI_AS NULL,
+[Priorita] [int] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Priorita] DEFAULT ((0)),
+[ContributoSomma] [int] NOT NULL CONSTRAINT [DF_Documenti_Tipi_ContributoSomma] DEFAULT ((0)),
+[ContributoAnalisi] [int] NOT NULL CONSTRAINT [DF_Documenti_Tipi_ContributoAnalisi] DEFAULT ((0)),
+[DescrizioneSingolare] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL CONSTRAINT [DF_Documenti_Tipi_DescrizioneSingolare] DEFAULT (''),
+[DescrizionePlurale] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL CONSTRAINT [DF_Documenti_Tipi_DescrizionePlurale] DEFAULT (''),
+[DescrizioneRidottaSingolare] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL CONSTRAINT [DF_Documenti_Tipi_DescrizioneRidottaSingolare] DEFAULT (''),
+[DescrizioneRidottaPlurale] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL CONSTRAINT [DF_Documenti_Tipi_DescrizioneRidottaPlurale] DEFAULT (''),
+[Cliente] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Cliente] DEFAULT ((0)),
+[Fornitore] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Fornitore] DEFAULT ((0)),
+[Intestazione] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Intestazione] DEFAULT ((0)),
+[Destinazione] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Destinazione] DEFAULT ((0)),
+[Pagamento] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Pagamento] DEFAULT ((0)),
+[Spese] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Spese] DEFAULT ((0)),
+[Trasporto] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Trasporto] DEFAULT ((0)),
+[CondizioniFornitura] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_CondizioniFornitura] DEFAULT ((0)),
+[Righe] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Righe] DEFAULT ((0)),
+[Note] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Note] DEFAULT ((0)),
+[Stato] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Stato] DEFAULT ((0)),
+[NumeroLibero] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_NumeroLibero] DEFAULT ((0)),
+[NumeroPre] [nvarchar] (10) COLLATE Latin1_General_CI_AS NULL,
+[NumeroPos] [nvarchar] (10) COLLATE Latin1_General_CI_AS NULL,
+[NumeroCifre] [int] NULL,
+[MovimentazioneMagazzino] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_MovimentazioneMagazzino] DEFAULT ((0)),
+[ReportEmbedded] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_ReportEmbedded] DEFAULT ((0)),
+[ReportName] [nvarchar] (255) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraIntestazione] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraDestinazione] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraImporti] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraTotali] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraScadenze] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraNote] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[ReportMostraAgente] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[AmmessoCliForNonAnagrafico] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_AmmessoCliForNonAnagrafico] DEFAULT ((0)),
+[AmmessoNascondiTotali] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_AmmessoNascondiTotali] DEFAULT ((0)),
+[CampiChiave] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL CONSTRAINT [DF_Documenti_Tipi_CampiChiave] DEFAULT (N'Numero'),
+[DataConsegna] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_DataConsegna] DEFAULT ((0)),
+[DescrizioneRidottaSingolareAlternativa] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[Protocollo] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Protocollo] DEFAULT ((0)),
+[Allegato] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Allegato] DEFAULT ((0)),
+[Contatto] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Contatto] DEFAULT ((0)),
+[SviluppoProvvigioni] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_SviluppoProvvigioni] DEFAULT ((0)),
+[Riferimenti] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Riferimenti] DEFAULT ((0)),
+[Sospesi] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Sospesi] DEFAULT ((0)),
+[ModelloReport] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL CONSTRAINT [DF_Documenti_Tipi_ModelloReport] DEFAULT ('STD'),
+[ReportFolder] [nvarchar] (255) COLLATE Latin1_General_CI_AS NULL,
+[Totali] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_Totali] DEFAULT ((0)),
+[SviluppoScadenze] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_SviluppoScadenze] DEFAULT ((0)),
+[DescrizioneRidottaSingolareAlternativa2] [nvarchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[SDI_TipoDocumento] [char] (4) COLLATE Latin1_General_CI_AS NULL,
+[SDI_IsValido] [bit] NULL CONSTRAINT [DF_Documenti_Tipi_SDI_IsValido] DEFAULT ((0)),
+[SDI_DataInizio] [date] NULL,
+[AvvisoCodIva] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_AvvisoCodIva] DEFAULT ('0'),
+[SDI_TipoDocumentoPassivo] [char] (4) COLLATE Latin1_General_CI_AS NULL,
+[BolloVirtuale] [bit] NOT NULL CONSTRAINT [DF_dbo_Documenti_Tipi_BolloVirtuale] DEFAULT ((0)),
+[SDI_CreazioneAutofattura] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_CreazioneAutofatture] DEFAULT ((0)),
+[SDI_Autofattura] [bit] NOT NULL CONSTRAINT [DF_Documenti_Tipi_Autofattura] DEFAULT ((0))
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Documenti_Tipi] ADD CONSTRAINT [PK_Documenti_Tipi_ID] PRIMARY KEY CLUSTERED ([ID]) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Documenti_Tipi_DescrizionePlurale] ON [dbo].[Documenti_Tipi] ([DescrizionePlurale]) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Documenti_Tipi_DescrizioneSingolare] ON [dbo].[Documenti_Tipi] ([DescrizioneSingolare]) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Documenti_Tipi] ADD CONSTRAINT [FK_Documenti_Tipi_Causali] FOREIGN KEY ([IDCausaleDefault]) REFERENCES [dbo].[Causali] ([ID]) ON UPDATE CASCADE
+GO

@@ -1,0 +1,3 @@
+CREATE SCHEMA [previo]
+AUTHORIZATION [dbo]
+GO

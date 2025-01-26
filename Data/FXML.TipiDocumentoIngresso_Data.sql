@@ -1,0 +1,6 @@
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD17', N'For_Fattura')
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD18', N'For_Fattura')
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD01', N'For_Fattura')
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD02', N'Cli_Fattura')
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD04', N'For_NotaCredito')
+INSERT INTO [FXML].[TipiDocumentoIngresso] ([IDTipoDocumento_SDI], [IDTipoDocumento_InVoice]) VALUES ('TD24', N'For_Fattura')
