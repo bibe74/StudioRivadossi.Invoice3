@@ -6,6 +6,8 @@
   <DefaultUser>dbo</DefaultUser>
   <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   <DatabaseVersion>16</DatabaseVersion>
+  <CompatibilityLevel>1</CompatibilityLevel>
+  <EngineEdition>Enterprise</EngineEdition>
   <IsAzure>False</IsAzure>
   <ScriptFolderType>Default</ScriptFolderType>
   <MaxDataFileSize>10485760</MaxDataFileSize>
@@ -63,8 +65,8 @@
   </WriteToFileOptions>
   <DataFileSet>
     <Count>3</Count>
+    <DataFile>dbo.Versioni_Data.sql</DataFile>
     <DataFile>FXML.TipiDocumentoIngresso_Data.sql</DataFile>
     <DataFile>FXML.TipiDocumentoUscita_Data.sql</DataFile>
-    <DataFile>dbo.Versioni_Data.sql</DataFile>
   </DataFileSet>
 </DatabaseInformation>
